@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("🚀 Event Platform Backend is Running");
+  res.send("Event Platform Backend is Running");
 });
 
 const db = mysql.createConnection({
@@ -22,10 +22,10 @@ const db = mysql.createConnection({
 
 db.connect(err => {
   if (err) {
-    console.error("❌ MySQL Error:", err);
+    console.error("MySQL Error:", err);
     return;
   }
-  console.log("✅ MySQL Connected");
+  console.log("MySQL Connected");
 });
 
 db.query(`
@@ -188,5 +188,6 @@ app.post("/events/:id/register", auth, (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("🚀 Server running at http://localhost:3000");
+  console.log("Server running at http://localhost:3000");
 });
+
